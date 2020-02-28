@@ -5,12 +5,14 @@ import com.file.generate.info.UserInfo;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class ReplacementUtil {
 
     public String replaceContentByUser(String content, UserInfo userInfo) {
-        for (String key : userInfo.getInfoMap().keySet()) {
-            content = content.replaceAll("<" + key + ">", userInfo.getInfoMap().get(key));
+        Map<String, String> infoMap = userInfo.getInfoMap();
+        for (String key : infoMap.keySet()) {
+            content = content.replaceAll("<" + key + ">", infoMap.get(key));
         }
         return content;
     }
