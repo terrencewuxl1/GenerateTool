@@ -1,0 +1,1 @@
+java -jar GenerateTool-1.0-SNAPSHOT.jar UserInfo.txt Template.sql
