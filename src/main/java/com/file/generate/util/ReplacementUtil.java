@@ -9,7 +9,7 @@ import java.util.List;
 public class ReplacementUtil {
 
     public String replaceContentByUser(String content, UserInfo userInfo) {
-        for (String key : userInfo.getInfoKeys()) {
+        for (String key : userInfo.getInfoMap().keySet()) {
             content = content.replaceAll("<" + key + ">", userInfo.getInfoMap().get(key));
         }
         return content;
