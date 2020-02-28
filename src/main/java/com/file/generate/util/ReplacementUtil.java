@@ -27,11 +27,13 @@ public class ReplacementUtil {
 
     public void generateNewSQLFile(String userInfoFileName, String templateFileName) throws IOException {
         FileUtil fileUtil = new FileUtil();
-        String templateContent = fileUtil.readFileToString(templateFileName);
-        List<UserInfo> userIfs = fileUtil.readFileToUserInfo(userInfoFileName);
-        String targetFileName = fileUtil.getTargetFileName(templateFileName);
-        fileUtil.writeToFile(replaceContent(userIfs, templateContent), targetFileName);
-        System.out.println("Write to file " + targetFileName + " finished.");
+        fileUtil.writeToFile(
+                replaceContent(
+                        fileUtil.readFileToUserInfo(userInfoFileName),
+                        fileUtil.readFileToString(templateFileName)
+                ),
+                fileUtil.getTargetFileName(templateFileName));
+        System.out.println("Write to file " + fileUtil.getTargetFileName(templateFileName) + " finished.");
     }
 
 

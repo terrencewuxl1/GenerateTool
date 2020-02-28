@@ -13,9 +13,9 @@ public class GeneratorMain {
             return;
         }
         try {
-            String currentPath = new File(".").getCanonicalPath();
+            String currentPath = new File(".").getCanonicalPath() + "/";
             new ReplacementUtil()
-                    .generateNewSQLFile(currentPath + "/" + args[0], currentPath + "/" + args[1]);
+                    .generateNewSQLFile(currentPath + args[0], currentPath + args[1]);
         } catch (Exception e) {
             System.err.println("Fail to generate file as " + e.getMessage());
             e.printStackTrace();
