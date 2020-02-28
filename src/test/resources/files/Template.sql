@@ -1,0 +1,17 @@
+insert into USER_TABLE
+(
+SYS_CODE,
+FIRST_NAME,
+LAST_NAME,
+ID,
+UPDATE_ON,
+UPDATE_BY
+)VALUES
+(
+'<SYSTEM>',
+'<FIRST_NAME>',
+'<LAST_NAME>',
+'<ID>',
+'2020-01-01',
+'90'
+);
